@@ -19,14 +19,17 @@ function onFormInput(e) {
 function onFormSubmit(e) {
   e.preventDefault();
 
-  if (!Object.keys(formData).length) {
-    return;
+  if (
+    !Object.keys(formData).length ||
+    form.email.value.trim() === '' ||
+    form.message.value.trim() === ''
+  ) {
+    return alert('Please, fill in all fields');
   }
-  console.log(formData);
 
   form.reset();
   formData = {};
-  localStorage.clear();
+  localStorage.removeItem(STORAGE_KEY);
 }
 
 function recoveryFormItems(nameItem) {
