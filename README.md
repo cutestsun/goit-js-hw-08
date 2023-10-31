@@ -1,2 +1,1 @@
-# goit-js-hw-08
-📚 JS Homework 8
+# 📚 JS Homework 8
